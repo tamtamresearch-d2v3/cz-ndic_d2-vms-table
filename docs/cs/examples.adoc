@@ -45,12 +45,12 @@ image::ex-04.png[Portál liniového řízení,width=600]
 * Činné plochy (`vms:DisplayArea`): [vms:1,5] 1× typu piktogram; [vms:2,3,4] 1× typu piktogram (s implicitní dodatkovou
   tabulkou)
 
-.static-2-LM.xml
+.static-2-LM.xml (ilustrační příklad, nejde o vzorek dat)
 [%collapsible]
 ====
 [source,xml]
 ----
-include::{samplesdir}/static-2-LM.xml[tags=**]
+include::../ilustrace/static-2-LM.xml[tags=**]
 ----
 ====
 
@@ -66,12 +66,12 @@ image::ex-05.png[ZPI teploměr,width=600]
 * VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `temperature`): 1× dynamická značka vpravo [vms:1]
 * Činné plochy (`vms:DisplayArea`): [vms:1] 1× typu text se 2 řádky (teplota okolí, teplota vozovky)
 
-.static-3-meteo.xml
+.static-3-meteo.xml (ilustrační příklad, nejde o vzorek dat)
 [%collapsible]
 ====
 [source,xml]
 ----
-include::{samplesdir}/static-3-meteo.xml[tags=**]
+include::../ilustrace/static-3-meteo.xml[tags=**]
 ----
 ====
 
@@ -88,21 +88,21 @@ image:ex-07.png[Detail značky,width=140]
 * VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `parking`): 1× dynamická značka [vms:1]
 * Činné plochy (`vms:DisplayArea`): [vms:1] 1× typu text s 1–2 řádky (bližší a vzdálenější parkoviště)
 
-.static-4-parking.xml
+.static-4-parking.xml (ilustrační příklad, nejde o vzorek dat)
 [%collapsible]
 ====
 [source,xml]
 ----
-include::{samplesdir}/static-4-parking.xml[tags=**]
+include::../ilustrace/static-4-parking.xml[tags=**]
 ----
 ====
 
-.static-4-parking_full.xml
+.static-4-parking_full.xml (ilustrační příklad, nejde o vzorek dat)
 [%collapsible]
 ====
 [source,xml]
 ----
-include::{samplesdir}/static-4-parking_full.xml[tags=**]
+include::../ilustrace/static-4-parking_full.xml[tags=**]
 ----
 ====
 
