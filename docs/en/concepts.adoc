@@ -72,7 +72,7 @@ The static publication has the following structure:
   `vmsControllerTable`); each table is published separately:
 ** `CzechVmsTable-fixedVms` – dynamic permanent signs (along the road, on a gantry or cantilever),
 ** `CzechVmsTable-mobileVms` – dynamic portable signs (mobile trailers),
-** `CzechVmsTable-metalSigns` – fixed static ("metal") signs; the table is reserved and not yet published.
+** `CzechVmsTable-metalSigns` – fixed static ("metal") signs; the table is reserved and is not published.
 * A controller has exactly as many VMS (elements `vms`) as there are separate physical elements on the
   gantry:
 ** information gantries and trailers with one ZPI and/or one or more PDZ are modelled as one VMS,

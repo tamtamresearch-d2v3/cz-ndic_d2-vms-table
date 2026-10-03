@@ -68,8 +68,8 @@ Statická publikace má následující strukturu:
   tabulka se publikuje samostatně:
 ** `CzechVmsTable-fixedVms` – dynamické stálé značky (podél komunikace, na (polo)portálu),
 ** `CzechVmsTable-mobileVms` – dynamické přenosné značky (mobilní vozíky),
-** `CzechVmsTable-metalSigns` – pevné statické („plechové“) značky; tabulka je vyhrazena a zatím se
-   nepublikuje.
+** `CzechVmsTable-metalSigns` – pevné statické („plechové“) značky; tabulka je vyhrazena a nepublikuje
+   se.
 * Řadič má právě tolik VMS (elementů `vms`), kolik je na portálu oddělených fyzických prvků:
 ** informační portály a vozíky s jedním ZPI a/nebo jednou či více PDZ se modelují jako jedna VMS,
 ** portály liniového řízení se modelují jako více VMS.
