@@ -1,4 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!-- Static Lane management example, VMS on the gantry and support structure -->
+<!-- 
+         x=====x   x=====x   x=====x      
+    x====x PDZ x===x PDZ x===x PDZ x====x
+    x    x=====x   x=====x   x=====x    x
+ x=====x                           x=====x
+ x PDZ x                             x PDZ x
+ x=====x                             x=====x
+    x                                   x
+ -->
 <d2:payload xmlns:vms="http://datex2.eu/schema/3/vms" xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:com="http://datex2.eu/schema/3/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" modelBaseVersion="3" xsi:type="vms:VmsTablePublication" lang="cs" profileName="cz-ndic_d2-vms-table" profileVersion="1.3">
   <com:feedType>x-source:cz-ndic_d2-vms-table-fixed-pull-v3</com:feedType>
   <com:publicationTime>2026-09-03T12:05:23+02:00</com:publicationTime>
@@ -10,29 +20,42 @@
     <com:confidentiality>noRestriction</com:confidentiality>
     <com:informationStatus>real</com:informationStatus>
   </vms:headerInformation>
+  <!-- the name of the table could be anything, there could be more tables than 1 -->
   <vms:vmsControllerTable id="CzechVmsTable-fixedVms" version="260601">
+    <!-- NDIC is the publisher -->
     <vms:informationManager>
       <com:country>cz</com:country>
       <com:nationalIdentifier>NDIC</com:nationalIdentifier>
     </vms:informationManager>
+    <!-- one controller per portal/post -->
+    <!-- id of the controller is given the official labelling scheme ŘSD ČR PPK R120 -->
     <vms:vmsController id="hadr24lfd3" version="260601">
+      <!-- 5 gantry mounted vms, 2 side 3 in the middle -->
       <vms:numberOfVms>5</vms:numberOfVms>
+      <!-- url to the **actual** picture of the whole (portal) structure -->
       <vms:externalIdentifier>https://mobilitydata.rsd.cz/VMS/hadr24lfd3</vms:externalIdentifier>
       
+      <!-- PDZ on the left side of the road with speed information -->
       <vms:vms vmsIndex="1">
         <vms:vms>
+          <!-- has the vms embedded lanterns? -->
           <vms:lanternsPresent>false</vms:lanternsPresent>
+          <!-- owned by ŘSD ČR-->
           <vms:owner>
             <com:values>
               <com:value lang="cs">ŘSD ČR</com:value>
             </com:values>
           </vms:owner>
+          <!-- full gantry mounted-->
           <vms:physicalSupport>gantryMounted</vms:physicalSupport>
           <vms:vmsType>simpleMatrixSign</vms:vmsType>
+          <!-- custom code list of vms types defined by NTIC -->
           <vms:vmsTypeCode>variableMessageSign</vms:vmsTypeCode>
           <vms:dynamicallyConfigurable>false</vms:dynamicallyConfigurable>
           <vms:vmsConfiguration>
+            <!-- 1 active area with speed limit sign -->
             <vms:numberOfDisplayAreas>1</vms:numberOfDisplayAreas>
+            <!-- PDZ Information -->
             <vms:displayArea displayAreaIndex="1">
               <vms:displayArea xsi:type="vms:PictogramDisplayArea">
                 <vms:pictogramCodeListIdentifier>cz-pictogram-code-list-v1.1</vms:pictogramCodeListIdentifier>
@@ -41,6 +64,8 @@
             </vms:displayArea>
           </vms:vmsConfiguration>
           <vms:vmsLocation xsi:type="loc:PointLocation">
+            <!-- vms located on left side support structure of the gantry, 
+            valid for whole road belt -->
             <loc:supplementaryPositionalDescription>
               <loc:positionOnCarriageway>onTheLeft</loc:positionOnCarriageway>
               <loc:carriageway>
@@ -54,6 +79,7 @@
                 <loc:roadNumber>D11</loc:roadNumber>
               </loc:roadInformation>
             </loc:supplementaryPositionalDescription>
+            <!-- WGS84 coordinates (lat, lon) cente of the road belt, perpendicular to sign post -->
             <loc:pointByCoordinates>
               <loc:pointCoordinates>
                 <loc:latitude>50.382165</loc:latitude>
@@ -61,6 +87,7 @@
               </loc:pointCoordinates>
             </loc:pointByCoordinates>
             
+            <!-- location by mileage posts from road start MANDATORY -->
             <loc:pointAlongLinearElement>
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement>
@@ -71,41 +98,55 @@
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           
+            <!-- location by Global Network element percentage of the element OPTIONAL -->
             <loc:pointAlongLinearElement>
+              <!-- always aligned on direction separated roads -->
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <!-- identification of the base data set GN -->
                 <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
                 <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <!-- GN element containing the location -->
                 <loc:linearElementIdentifier>1457896814</loc:linearElementIdentifier>
               </loc:linearElement>
+              <!-- distance in meters from start of the GN element (not start of the road) -->
               <loc:distanceAlongLinearElement xsi:type="loc:PercentageDistanceAlongLinearElement">
                 <loc:percentageDistanceAlong>31.5</loc:percentageDistanceAlong>
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
 
           </vms:vmsLocation>
+          <!-- url to the **actual** picture of the VMS, just one PDZ sign -->
           <vms:imageLink>
             <com:urlLinkAddress>https://mobilitydata.rsd.cz/VMS/hadr24lfd3/1</com:urlLinkAddress>
           </vms:imageLink>
         </vms:vms>
       </vms:vms>
 
+      <!-- PDZ above 2. lane for lane management purposes -->
       <vms:vms vmsIndex="2">
         <vms:vms>
+          <!-- has the vms embedded lanterns? -->
           <vms:lanternsPresent>false</vms:lanternsPresent>
+          <!-- owned by ŘSD ČR-->
           <vms:owner>
             <com:values>
               <com:value lang="cs">ŘSD ČR</com:value>
             </com:values>
           </vms:owner>
+          <!-- full gantry mounted-->
           <vms:physicalSupport>gantryMounted</vms:physicalSupport>
           <vms:vmsType>simpleMatrixSign</vms:vmsType>
+          <!-- custom code list of vms types defined by NTIC -->
           <vms:vmsTypeCode>variableMessageSign</vms:vmsTypeCode>
           <vms:dynamicallyConfigurable>false</vms:dynamicallyConfigurable>
+          <!-- gantry standard height -->
           <vms:heightAboveCarriageway>5.6</vms:heightAboveCarriageway>
           <vms:dedicatedUsage>laneControlSystem</vms:dedicatedUsage>
           <vms:vmsConfiguration>
+            <!-- 1 active area with lane control sign -->
             <vms:numberOfDisplayAreas>1</vms:numberOfDisplayAreas>
+            <!-- PDZ Information -->
             <vms:displayArea displayAreaIndex="1">
               <vms:displayArea xsi:type="vms:PictogramDisplayArea">
                 <vms:pictogramCodeListIdentifier>cz-pictogram-code-list-v1.1</vms:pictogramCodeListIdentifier>
@@ -114,6 +155,7 @@
             </vms:displayArea>
           </vms:vmsConfiguration>
           <vms:vmsLocation xsi:type="loc:PointLocation">
+            <!-- vms located above road, 2. lane on the gantry, valid for 2. lane only -->
             <loc:supplementaryPositionalDescription>
               <loc:positionOnCarriageway>inTheCentre</loc:positionOnCarriageway>
               <loc:carriageway>
@@ -128,6 +170,7 @@
               </loc:roadInformation>
               </loc:supplementaryPositionalDescription>
             
+            <!-- WGS84 coordinates (lat, lon) cente of the road belt, perpendicular to sign post -->
             <loc:pointByCoordinates>
               <loc:pointCoordinates>
                 <loc:latitude>50.382165</loc:latitude>
@@ -135,6 +178,7 @@
                 </loc:pointCoordinates>
             </loc:pointByCoordinates>
             
+            <!-- location by mileage posts from road start MANDATORY -->
             <loc:pointAlongLinearElement>
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement>
@@ -145,40 +189,54 @@
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           
+            <!-- location by Global Network element percentage of the element OPTIONAL -->
             <loc:pointAlongLinearElement>
+              <!-- always aligned on direction separated roads -->
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <!-- identification of the base data set GN -->
                 <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
                 <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <!-- GN element containing the location -->
                 <loc:linearElementIdentifier>1457896814</loc:linearElementIdentifier>
               </loc:linearElement>
+              <!-- distance in meters from start of the GN element (not start of the road) -->
               <loc:distanceAlongLinearElement xsi:type="loc:PercentageDistanceAlongLinearElement">
                 <loc:percentageDistanceAlong>31.5</loc:percentageDistanceAlong>
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           </vms:vmsLocation>
           
+          <!-- url to the **actual** picture of the VMS, just one PDZ sign -->
           <vms:imageLink>
             <com:urlLinkAddress>https://mobilitydata.rsd.cz/VMS/hadr24lfd3/2</com:urlLinkAddress>
           </vms:imageLink>
         </vms:vms>
       </vms:vms>
 
+      <!-- PDZ between 1. and 2. lane for warning and information -->
       <vms:vms vmsIndex="3">
         <vms:vms>
+          <!-- has the vms embedded lanterns? -->
           <vms:lanternsPresent>true</vms:lanternsPresent>
+          <!-- owned by ŘSD ČR-->
           <vms:owner>
             <com:values>
               <com:value lang="cs">ŘSD ČR</com:value>
             </com:values>
           </vms:owner>
+          <!-- full gantry mounted-->
           <vms:physicalSupport>gantryMounted</vms:physicalSupport>
           <vms:vmsType>simpleMatrixSign</vms:vmsType>
+          <!-- custom code list of vms types defined by NTIC -->
           <vms:vmsTypeCode>variableMessageSign</vms:vmsTypeCode>
           <vms:dynamicallyConfigurable>false</vms:dynamicallyConfigurable>
+          <!-- gantry standard height -->
           <vms:heightAboveCarriageway>5.6</vms:heightAboveCarriageway>
           <vms:vmsConfiguration>
+            <!-- 1 active area with speed limit sign -->
             <vms:numberOfDisplayAreas>1</vms:numberOfDisplayAreas>
+            <!-- PDZ Information -->
             <vms:displayArea displayAreaIndex="1">
               <vms:displayArea xsi:type="vms:PictogramDisplayArea">
                 <vms:pictogramCodeListIdentifier>cz-pictogram-code-list-v1.1</vms:pictogramCodeListIdentifier>
@@ -187,6 +245,7 @@
             </vms:displayArea>
           </vms:vmsConfiguration>
           <vms:vmsLocation xsi:type="loc:PointLocation">
+            <!-- vms located above road, between 1. and 2. lane on the gantry, valid for whole rad belt -->
             <loc:supplementaryPositionalDescription>
               <loc:positionOnCarriageway>inTheCentre</loc:positionOnCarriageway>
               <loc:carriageway>
@@ -199,6 +258,7 @@
                 <loc:roadDestination>Praha</loc:roadDestination>
                 <loc:roadNumber>D11</loc:roadNumber>
               </loc:roadInformation></loc:supplementaryPositionalDescription>
+            <!-- WGS84 coordinates (lat, lon) cente of the road belt, perpendicular to sign post -->
             <loc:pointByCoordinates>
               <loc:pointCoordinates>
                 <loc:latitude>50.382165</loc:latitude>
@@ -206,6 +266,7 @@
               </loc:pointCoordinates>
             </loc:pointByCoordinates>
             
+            <!-- location by mileage posts from road start MANDATORY -->
             <loc:pointAlongLinearElement>
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement>
@@ -216,40 +277,54 @@
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           
+            <!-- location by Global Network element percentage of the element OPTIONAL -->
             <loc:pointAlongLinearElement>
+              <!-- always aligned on direction separated roads -->
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <!-- identification of the base data set GN -->
                 <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
                 <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <!-- GN element containing the location -->
                 <loc:linearElementIdentifier>1457896814</loc:linearElementIdentifier>
               </loc:linearElement>
+              <!-- distance in meters from start of the GN element (not start of the road) -->
               <loc:distanceAlongLinearElement xsi:type="loc:PercentageDistanceAlongLinearElement">
                 <loc:percentageDistanceAlong>31.5</loc:percentageDistanceAlong>
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           </vms:vmsLocation>
+          <!-- url to the **actual** picture of the VMS, just one PDZ sign -->
           <vms:imageLink>
             <com:urlLinkAddress>https://mobilitydata.rsd.cz/VMS/hadr24lfd3/3</com:urlLinkAddress>
           </vms:imageLink>
         </vms:vms>
       </vms:vms>
 
+      <!-- PDZ above 1. lane for lane management purposes -->
       <vms:vms vmsIndex="4">
         <vms:vms>
+          <!-- has the vms embedded lanterns? -->
           <vms:lanternsPresent>false</vms:lanternsPresent>
+          <!-- owned by ŘSD ČR-->
           <vms:owner>
             <com:values>
               <com:value lang="cs">ŘSD ČR</com:value>
             </com:values>
           </vms:owner>
+          <!-- full gantry mounted-->
           <vms:physicalSupport>gantryMounted</vms:physicalSupport>
           <vms:vmsType>simpleMatrixSign</vms:vmsType>
+          <!-- custom code list of vms types defined by NTIC -->
           <vms:vmsTypeCode>variableMessageSign</vms:vmsTypeCode>
           <vms:dynamicallyConfigurable>false</vms:dynamicallyConfigurable>
+          <!-- gantry standard height -->
           <vms:heightAboveCarriageway>5.6</vms:heightAboveCarriageway>
           <vms:dedicatedUsage>laneControlSystem</vms:dedicatedUsage>
           <vms:vmsConfiguration>
+            <!-- 1 active area with speed limit sign -->
             <vms:numberOfDisplayAreas>1</vms:numberOfDisplayAreas>
+            <!-- PDZ Information -->
             <vms:displayArea displayAreaIndex="1">
               <vms:displayArea xsi:type="vms:PictogramDisplayArea">
                 <vms:pictogramCodeListIdentifier>cz-pictogram-code-list-v1.1</vms:pictogramCodeListIdentifier>
@@ -258,6 +333,7 @@
             </vms:displayArea>
           </vms:vmsConfiguration>
           <vms:vmsLocation xsi:type="loc:PointLocation">
+            <!-- vms located above road, 1. lane on the gantry, valid for 1. lane only -->
             <loc:supplementaryPositionalDescription>
               <loc:positionOnCarriageway>inTheCentre</loc:positionOnCarriageway>
               <loc:carriageway>
@@ -271,6 +347,7 @@
                 <loc:roadNumber>D11</loc:roadNumber>
               </loc:roadInformation>
             </loc:supplementaryPositionalDescription>
+            <!-- WGS84 coordinates (lat, lon) cente of the road belt, perpendicular to sign post -->
             <loc:pointByCoordinates>
               <loc:pointCoordinates>
                 <loc:latitude>50.382165</loc:latitude>
@@ -278,6 +355,7 @@
               </loc:pointCoordinates>
             </loc:pointByCoordinates>
             
+            <!-- location by mileage posts from road start MANDATORY -->
             <loc:pointAlongLinearElement>
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement>
@@ -288,19 +366,25 @@
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           
+            <!-- location by Global Network element percentage of the element OPTIONAL -->
             <loc:pointAlongLinearElement>
+              <!-- always aligned on direction separated roads -->
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <!-- identification of the base data set GN -->
                 <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
                 <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <!-- GN element containing the location -->
                 <loc:linearElementIdentifier>1457896814</loc:linearElementIdentifier>
               </loc:linearElement>
+              <!-- distance in meters from start of the GN element (not start of the road) -->
               <loc:distanceAlongLinearElement xsi:type="loc:PercentageDistanceAlongLinearElement">
                 <loc:percentageDistanceAlong>31.5</loc:percentageDistanceAlong>
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
             
           </vms:vmsLocation>
+          <!-- url to the **actual** picture of the VMS, just one PDZ sign -->
           <vms:imageLink>
             <com:urlLinkAddress>https://mobilitydata.rsd.cz/VMS/hadr24lfd3/4</com:urlLinkAddress>
           </vms:imageLink>
@@ -308,20 +392,27 @@
       </vms:vms>
       
       
+      <!-- PDZ on the right side of the road with speed information -->
       <vms:vms vmsIndex="5">
         <vms:vms>
+          <!-- the vms does not have has embed lanterns -->
           <vms:lanternsPresent>false</vms:lanternsPresent>
+          <!-- owned by ŘSD ČR-->
           <vms:owner>
             <com:values>
               <com:value lang="cs">ŘSD ČR</com:value>
             </com:values>
           </vms:owner>
+          <!-- full gantry mounted-->
           <vms:physicalSupport>gantryMounted</vms:physicalSupport>
           <vms:vmsType>simpleMatrixSign</vms:vmsType>
+          <!-- custom code list of vms types defined by NTIC -->
           <vms:vmsTypeCode>variableMessageSign</vms:vmsTypeCode>
           <vms:dynamicallyConfigurable>false</vms:dynamicallyConfigurable>
           <vms:vmsConfiguration>
+            <!-- 1 active area with speed limit sign -->
             <vms:numberOfDisplayAreas>1</vms:numberOfDisplayAreas>
+            <!-- PDZ Information -->
             <vms:displayArea displayAreaIndex="1">
               <vms:displayArea xsi:type="vms:PictogramDisplayArea">
                 <vms:pictogramCodeListIdentifier>cz-pictogram-code-list-v1.1</vms:pictogramCodeListIdentifier>
@@ -330,6 +421,8 @@
             </vms:displayArea>
           </vms:vmsConfiguration>
           <vms:vmsLocation xsi:type="loc:PointLocation">
+            <!-- vms located on left side support structure of the gantry, 
+            valid for whole road belt -->
             <loc:supplementaryPositionalDescription>
               <loc:positionOnCarriageway>onTheRight</loc:positionOnCarriageway>
               <loc:carriageway>
@@ -343,6 +436,7 @@
                 <loc:roadNumber>D11</loc:roadNumber>
               </loc:roadInformation>
             </loc:supplementaryPositionalDescription>
+            <!-- WGS84 coordinates (lat, lon) cente of the road belt, perpendicular to sign post -->
             <loc:pointByCoordinates>
               <loc:pointCoordinates>
                 <loc:latitude>50.382165</loc:latitude>
@@ -350,6 +444,7 @@
               </loc:pointCoordinates>
             </loc:pointByCoordinates>
             
+            <!-- location by mileage posts from road start MANDATORY -->
             <loc:pointAlongLinearElement>
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement>
@@ -360,18 +455,24 @@
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           
+            <!-- location by Global Network element percentage of the element OPTIONAL -->
             <loc:pointAlongLinearElement>
+              <!-- always aligned on direction separated roads -->
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement xsi:type="loc:LinearElementByCode">
+                <!-- identification of the base data set GN -->
                 <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
                 <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
+                <!-- GN element containing the location -->
                 <loc:linearElementIdentifier>1457896814</loc:linearElementIdentifier>
               </loc:linearElement>
+              <!-- distance in meters from start of the GN element (not start of the road) -->
               <loc:distanceAlongLinearElement xsi:type="loc:PercentageDistanceAlongLinearElement">
                 <loc:percentageDistanceAlong>31.5</loc:percentageDistanceAlong>
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           </vms:vmsLocation>
+          <!-- url to the **actual** picture of the VMS, just one PDZ sign -->
           <vms:imageLink>
             <com:urlLinkAddress>https://mobilitydata.rsd.cz/VMS/hadr24lfd3/5</com:urlLinkAddress>
           </vms:imageLink>
