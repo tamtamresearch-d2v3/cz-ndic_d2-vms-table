@@ -43,8 +43,8 @@ image::vmt-image2.png[Struktura identifikátorů,width=600,align="center"]
 [cols="1,3,2",options="header"]
 |===
 |Struktura |Identifikace |Příklad
-|tabulka řadičů (`vms:VmsControllerTable`) |jednoznačně unikátním identifikátorem a verzí; pojmenována podle typu řadičů v tabulce |`id="CzechVmsTable-fixedVms" version="260601"`
-|řadič VMS (`vms:VmsController`) |jednoznačně unikátním identifikátorem a verzí; identifikátor je evidenční číslo portálu podle „R120 Evidenční čísla portálů“ nebo jiný stálý jedinečný kód (u řadičů TSK a vozíků GUID) |`id="D08PP0000092" version="260601"`
+|tabulka řadičů (`vms:VmsControllerTable`) |jednoznačným identifikátorem a verzí; pojmenována podle typu řadičů v tabulce |`id="CzechVmsTable-fixedVms" version="260601"`
+|řadič VMS (`vms:VmsController`) |jednoznačným identifikátorem a verzí; identifikátor je evidenční číslo portálu podle „R120 Evidenční čísla portálů“ nebo jiný stálý jedinečný kód (u řadičů TSK a vozíků GUID) |`id="D08PP0000092" version="260601"`
 |VMS (`vms:Vms`) |indexem v rámci řadiče, vždy od 1 |`vmsIndex="1"`
 |činná plocha (`vms:DisplayArea`) |indexem v rámci VMS, vždy od 1 |`displayAreaIndex="1"`
 |===
