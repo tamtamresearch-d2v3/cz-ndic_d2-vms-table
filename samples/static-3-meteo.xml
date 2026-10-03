@@ -1,14 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!-- Road and ambient temperature information panel, realized by text area -->
-<!-- LED PDZ A 8, A 24, E 3a, E 4 na dálnici D8 v km 14,900 a 18,915 -->
-<!-- 
- x====================x     
- x  PIT, ambient temp x      
- x  PIT, road temp    x 
- x=====x========x=====x
-       x        x
-       x      x
- -->
 <d2:payload xmlns:vms="http://datex2.eu/schema/3/vms" xmlns:d2="http://datex2.eu/schema/3/d2Payload" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:com="http://datex2.eu/schema/3/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" modelBaseVersion="3" xsi:type="vms:VmsTablePublication" lang="cs" profileName="cz-ndic_d2-vms-table" profileVersion="1.3">
   <com:feedType>x-source:cz-ndic_d2-vms-table-fixed-pull-v3</com:feedType>
   <com:publicationTime>2026-09-03T12:05:23+02:00</com:publicationTime>
@@ -20,65 +10,49 @@
     <com:confidentiality>noRestriction</com:confidentiality>
     <com:informationStatus>real</com:informationStatus>
   </vms:headerInformation>
-  <!-- the name of the table could be anything, there could be more tables than 1 -->
   <vms:vmsControllerTable id="CzechVmsTable-fixedVms" version="260601">
-    <!-- NDIC is the publisher -->
     <vms:informationManager>
       <com:country>cz</com:country>
       <com:nationalIdentifier>NDIC</com:nationalIdentifier>
     </vms:informationManager>
-    <!-- one controller per portal/post -->
-    <!-- id of the controller is given the official labelling scheme ŘSD ČR PPK R120 -->
     <vms:vmsController id="0lf3pel9rq" version="260601">
-      <!-- meteo is always described as one vms -->
       <vms:numberOfVms>1</vms:numberOfVms>
-      <!-- url to the **actual** picture of the whole (portal) structure -->
       <vms:externalIdentifier>https://mobilitydata.rsd.cz/VMS/0lf3pel9rq</vms:externalIdentifier>
       <vms:vms vmsIndex="1">
         <vms:vms>
-          <!-- the vms does not have embedded lanterns -->
           <vms:lanternsPresent>false</vms:lanternsPresent>
-          <!-- Prague ZPI is owned by TSK Praha-->
           <vms:owner>
             <com:values>
               <com:value lang="cs">ŘSD ČR</com:value>
             </com:values>
           </vms:owner>
-          <!-- normal dispaly sign mounted along the road -->
           <vms:physicalSupport>roadsideMounted</vms:physicalSupport>
           <vms:vmsType>monochromeGraphic</vms:vmsType>
-          <!-- custom code list of vms types defined by NTIC -->
           <vms:vmsTypeCode>temperature</vms:vmsTypeCode>
           <vms:dynamicallyConfigurable>false</vms:dynamicallyConfigurable>
           <vms:vmsConfiguration>
-            <!-- one Text panel with two lines (ambient/road temperature)  -->
             <vms:numberOfDisplayAreas>1</vms:numberOfDisplayAreas>
-            <!-- PIT Information -->
             <vms:displayArea displayAreaIndex="1">
               <vms:displayArea xsi:type="vms:TextDisplayArea">
-                <!-- position on the VMS-->
                 <vms:maxNumberOfRows>2</vms:maxNumberOfRows>
                 <vms:textCodeListIdentifier>cz-phrase-code-list-v1.0</vms:textCodeListIdentifier>
               </vms:displayArea>
             </vms:displayArea>
           </vms:vmsConfiguration>
           <vms:vmsLocation xsi:type="loc:PointLocation">
-            <!-- ZPI located on the right side of the road, valid for whole road belt --><loc:supplementaryPositionalDescription>
+            <loc:supplementaryPositionalDescription>
               <loc:positionOnCarriageway>onTheRight</loc:positionOnCarriageway>
-              <!-- validity for -->
               <loc:carriageway>
                 <loc:carriageway>mainCarriageway</loc:carriageway>
                 <loc:lane>
                   <loc:laneUsage>allLanesCompleteCarriageway</loc:laneUsage>
                 </loc:lane>
               </loc:carriageway>
-              <!-- name of the road and direction here -->
               <loc:roadInformation>
                 <loc:roadDestination>Praha</loc:roadDestination>
                 <loc:roadNumber>D8</loc:roadNumber>
               </loc:roadInformation>
             </loc:supplementaryPositionalDescription>
-            <!-- WGS84 coordinates (lat, lon) cente of the road belt, perpendicular to sign post -->
             <loc:pointByCoordinates>
               <loc:pointCoordinates>
                 <loc:latitude>50.3211183</loc:latitude>
@@ -86,7 +60,6 @@
               </loc:pointCoordinates>
             </loc:pointByCoordinates>
             
-            <!-- location by mileage posts from road start MANDATORY -->
             <loc:pointAlongLinearElement>
               <loc:directionRelativeAtPoint>opposite</loc:directionRelativeAtPoint>
               <loc:linearElement>
@@ -97,25 +70,18 @@
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           
-            <!-- location by Global Network element percentage of the element OPTIONAL -->
             <loc:pointAlongLinearElement>
-              <!-- always aligned on direction separated roads -->
               <loc:directionRelativeAtPoint>aligned</loc:directionRelativeAtPoint>
               <loc:linearElement xsi:type="loc:LinearElementByCode">
-                <!-- identification of the base data set GN -->
                 <loc:linearElementReferenceModel>CZ-RSD-GlobalNetwork</loc:linearElementReferenceModel>
                 <loc:linearElementReferenceModelVersion>26.06</loc:linearElementReferenceModelVersion>
-                <!-- GN element containing the location -->
                 <loc:linearElementIdentifier>1457896321</loc:linearElementIdentifier>
               </loc:linearElement>
-              <!-- distance in meters from start of the GN element (not start of the road) -->
               <loc:distanceAlongLinearElement xsi:type="loc:PercentageDistanceAlongLinearElement">
                 <loc:percentageDistanceAlong>28.5</loc:percentageDistanceAlong>
               </loc:distanceAlongLinearElement>
             </loc:pointAlongLinearElement>
           </vms:vmsLocation>
-          <!-- url to the **actual** picture of the VMS -->
-          <!-- if only 1 vms is in a controller unit with no additional information graphic, picture shall be same as on controller level, url different -->
           <vms:imageLink>
             <com:urlLinkAddress>https://mobilitydata.rsd.cz/VMS/0lf3pel9rq/1</com:urlLinkAddress>
           </vms:imageLink>
