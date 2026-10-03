@@ -16,7 +16,7 @@
 ** Verze tabulky a řadičů odpovídá vydání sítě Global Network (např. `260601`).
 ** Síť se dříve označovala `GlobalNetwork` a staničení jako `loc:LinearElementByCode` s modelem `mileage`; nově
    `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork` a staničení číslem komunikace (`roadNumber`),
-   u místních komunikací názvem (`roadName`) – shodně se situačními formáty.
+   u místních komunikací názvem (`roadName`).
 ** Kódy typů VMS `variableMesageSign` a `mobileVariableMesageSign` se nově zapisují správně
    `variableMessageSign` a `mobileVariableMessageSign`; ostatní kódy se nemění.
 * Původ řešení: odkaz na obrázek celého řadiče (`vmsController/externalIdentifier`) je koncept převzatý
