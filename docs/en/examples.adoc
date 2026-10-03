@@ -45,12 +45,12 @@ image::ex-04.png[Lane control gantry,width=600]
 * Display areas (`vms:DisplayArea`): [vms:1,5] 1× pictogram; [vms:2,3,4] 1× pictogram (with an implicit
   supplementary panel)
 
-.static-2-LM.xml (illustrative example, not a data sample)
+.static-2-LM.xml
 [%collapsible]
 ====
 [source,xml]
 ----
-include::../ilustrace/static-2-LM.xml[tags=**]
+include::{samplesdir}/static-2-LM.xml[tags=**]
 ----
 ====
 
@@ -66,12 +66,12 @@ image::ex-05.png[ZPI thermometer,width=600]
 * VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `temperature`): 1× dynamic sign on the right [vms:1]
 * Display areas (`vms:DisplayArea`): [vms:1] 1× text with 2 lines (air temperature, road surface temperature)
 
-.static-3-meteo.xml (illustrative example, not a data sample)
+.static-3-meteo.xml
 [%collapsible]
 ====
 [source,xml]
 ----
-include::../ilustrace/static-3-meteo.xml[tags=**]
+include::{samplesdir}/static-3-meteo.xml[tags=**]
 ----
 ====
 
@@ -88,21 +88,21 @@ image:ex-07.png[Sign detail,width=140]
 * VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `parking`): 1× dynamic sign [vms:1]
 * Display areas (`vms:DisplayArea`): [vms:1] 1× text with 1–2 lines (the nearer and the farther car park)
 
-.static-4-parking.xml (illustrative example, not a data sample)
+.static-4-parking.xml
 [%collapsible]
 ====
 [source,xml]
 ----
-include::../ilustrace/static-4-parking.xml[tags=**]
+include::{samplesdir}/static-4-parking.xml[tags=**]
 ----
 ====
 
-.static-4-parking_full.xml (illustrative example, not a data sample)
+.static-4-parking_full.xml
 [%collapsible]
 ====
 [source,xml]
 ----
-include::../ilustrace/static-4-parking_full.xml[tags=**]
+include::{samplesdir}/static-4-parking_full.xml[tags=**]
 ----
 ====
 
