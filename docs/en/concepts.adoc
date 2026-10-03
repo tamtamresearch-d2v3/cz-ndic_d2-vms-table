@@ -17,7 +17,7 @@ include::{kitdir}/shared/en/vms/pojmy.adoc[]
 [[obalka]]
 === Envelope and publication header
 
-Each message is a DATEX II 3 document with the root element `d2:payload`. The `xsi:type` attribute of the root element
+Each message is a DATEX II 3 document with the root element `d2:payload`. The `@xsi:type` attribute of the root element
 specifies the publication type (here `vms:VmsTablePublication`), the `modelBaseVersion="3"` attribute
 the model version and the `@lang` attribute the default language of texts.
 
