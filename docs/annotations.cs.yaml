@@ -34,7 +34,8 @@ VmsController:
     ndic: Počet fyzických VMS na portálu, sloupku…
   externalIdentifier:
     ndic: URL obrázku základní konfigurace řadiče s vyznačenými plochami (VMS a činné plochy)
-      a všemi neměnnými částmi značky důležitými pro její pochopení.
+      a všemi neměnnými částmi značky důležitými pro její pochopení (`https://mobilitydata.rsd.cz/VMS/<id řadiče>`);
+      poslední segment URL je shodný s `@id` řadiče, evidenční číslo prvek nenese.
   vms:
     ndic: Jedna VMS s jednou či více činnými plochami; `@vmsIndex` od 1, číslováno zleva doprava
       a shora dolů.

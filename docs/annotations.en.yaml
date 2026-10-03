@@ -27,7 +27,8 @@ VmsController:
     ndic: Number of physical VMS on the gantry, post…
   externalIdentifier:
     ndic: URL of an image of the basic controller configuration with the areas marked (VMS and display areas) and
-      all fixed parts of the sign important for understanding it.
+      all fixed parts of the sign important for understanding it (`https://mobilitydata.rsd.cz/VMS/<controller id>`);
+      the last URL segment equals the controller `@id`; the element does not carry the registration number.
   vms:
     ndic: One VMS with one or more display areas; `@vmsIndex` from 1, numbered from left to right and from top to
       bottom.
