@@ -153,5 +153,5 @@ PointAlongLinearElement:
     ndic: 'Chainage: `loc:LinearElement` with `roadNumber` (for local roads `roadName`); Global Network: `loc:LinearElementByCode`
       with the model `CZ-RSD-GlobalNetwork`, the network version and the section identifier.'
   distanceAlongLinearElement:
-    ndic: '`loc:DistanceFromLinearElementStart` (metres from the start of the chainage) or `loc:PercentageDistanceAlongLinearElement`
+    ndic: '`loc:DistanceFromLinearElementStart` (chainage in metres; it need not equal the actual distance from the start of the road) or `loc:PercentageDistanceAlongLinearElement`
       (percent of the length of the Global Network section from its start, 0–100).'
