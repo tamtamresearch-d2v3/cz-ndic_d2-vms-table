@@ -1,7 +1,7 @@
 = cz-ndic_d2-vms-table
 :toc: macro
 
-DATEX II VMS Table Publication – Tabulka proměnných dopravních značek. Statický popis proměnných dopravních značek: umístění, typ, konfigurace.
+DATEX II VMS Table Publication – Tabulka proměnného dopravního značení. Statický popis proměnných dopravních značek: umístění, typ, konfigurace.
 
 Repozitář formátu Národního dopravního informačního centra (NDIC) – specifikace datového profilu
 DATEX II 3.7 a jeho dokumentace. Aktuální verze formátu: *1.3*.
@@ -31,4 +31,4 @@ Vydání jsou v sekci *Releases* tohoto repozitáře:
 |`docs-<jazyk>-vX.Y.N` |dokumentace formátu v jazyce `cs`/`en` (PDF, HTML); `X.Y` = verze formátu, `N` = revize textu dané jazykové varianty
 |===
 
-Registr zdrojů dat a distribucí: https://registr.dopravniinfo.cz/[Národní přístupový bod].
+Registr distribucí (zdrojů dat): https://registr.dopravniinfo.cz/[Národní přístupový bod].

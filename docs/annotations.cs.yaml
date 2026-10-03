@@ -31,23 +31,20 @@ VmsControllerTable:
       komunikace. Identifikátor `@id` je jedinečný, `@version` odpovídá vydání sítě Global Network (např. `260601`).
 VmsController:
   numberOfVms:
-    card: 1..1
     ndic: Počet fyzických VMS na portálu, sloupku…
   externalIdentifier:
-    card: 1..1
     ndic: URL obrázku základní konfigurace řadiče s vyznačenými plochami (VMS a činné plochy)
-      a všemi neměnnými částmi značky důležitými pro její pochopení.
+      a všemi neměnnými částmi značky důležitými pro její pochopení (`https://mobilitydata.rsd.cz/VMS/<id řadiče>`);
+      poslední segment URL je shodný s `@id` řadiče, evidenční číslo prvek nenese.
   vms:
     ndic: Jedna VMS s jednou či více činnými plochami; `@vmsIndex` od 1, číslováno zleva doprava
       a shora dolů.
 Vms:
   lanternsPresent:
-    card: 1..1
     ndic: '`true`, jsou-li přítomny oddělené blikače či je pro ně vyhrazena část matice VMS.'
   owner:
     ndic: Např. ŘSD, TSK.
   physicalSupport:
-    card: 1..1
     values:
       roadsideMounted: podél pozemní komunikace na sloupku
       roadsideCantileverMounted: na poloportálu
@@ -58,7 +55,6 @@ Vms:
       tunnelEntranceMounted: na vjezdu do tunelu
       vehicleMounted: na vozidle
   vmsType:
-    card: 1..1
     values:
       fullMatrixSign: plně programovatelná matice
       rotatingPrismSign: hranolová značka (pevné symboly zobrazované otočením hranolu)
@@ -66,13 +62,11 @@ Vms:
       simpleMatrixSign: standardní VMS s předdefinovanými možnostmi
       other: plechové značky
   vmsTypeCode:
-    card: 1..1
     ndic: 'Rozlišení značek NDIC: `mobileVariableMessageSign` (PDZ a PIT na vozíku), `variableInformationPanel`
       (výstražná PDZ 0–2 a PIT), `variableMessageSign` (PDZ s dodatkovou tabulkou, též hranolové značky), `variableDirectionSign`
       (proměnná spojitá směrová značka), `temperature` (PIT se dvěma řádky o teplotě), `parking` (PIT
       s obsazeností parkovišť), `metalSign` (neproměnná značka).'
   dynamicallyConfigurable:
-    card: 1..1
     ndic: '`true`, je-li plocha VMS dynamicky konfigurovatelná – jen u `fullMatrixSign`, jinak `false`.'
   heightAboveCarriageway:
     ndic: Výška nad vozovkou v metrech u značek na portálu nad komunikací, jinak se vynechá.
@@ -86,8 +80,6 @@ Vms:
     card: 1..1
     ndic: URL aktuálního zobrazení VMS včetně všech činných ploch a dodatkových tabulek.
 VmsConfiguration:
-  numberOfDisplayAreas:
-    card: 1..1
   displayArea:
     ndic: Činná plocha typu `vms:PictogramDisplayArea` nebo `vms:TextDisplayArea`; `@displayAreaIndex`
       od 1, shora dolů a zleva doprava.
@@ -101,8 +93,6 @@ DisplayArea:
   positionYRelativeToPrevious:
     ndic: Svislá poloha vůči předchozí ploše (`alignedOnTheBottomSide`).
 TextDisplayArea:
-  maxNumberOfRows:
-    card: 1..1
   textCodeListIdentifier:
     ndic: Identifikátor tabulky kódovaných frází zobrazovaných na PIT (např. `cz-phrase-code-list-v1.0`);
       ne všechny fráze musí mít kódovaný význam.
@@ -115,7 +105,6 @@ PictogramDisplayArea:
       černé pozadí).
 PointLocation:
   pointByCoordinates:
-    card: 1..1
     ndic: Souřadnice ETRS89.
   pointAlongLinearElement:
     card: 1..2
@@ -123,7 +112,6 @@ PointLocation:
       a nepovinně Global Network (`CZ-RSD-GlobalNetwork`, vzdálenost od počátku úseku v procentech 0–100).'
 NetworkLocation:
   supplementaryPositionalDescription:
-    card: 1..1
     ndic: Doplňkový popis polohy VMS na úrovni jízdního pruhu včetně názvu a směru silnice.
 SupplementaryPositionalDescription:
   positionOnCarriageway:
@@ -157,7 +145,7 @@ PointAlongLinearElement:
     ndic: 'Staničení: `loc:LinearElement` s `roadNumber` (u místních komunikací `roadName`); Global Network:
       `loc:LinearElementByCode` s modelem `CZ-RSD-GlobalNetwork`, verzí sítě a identifikátorem úseku.'
   distanceAlongLinearElement:
-    ndic: '`loc:DistanceFromLinearElementStart` (metry od počátku staničení) nebo `loc:PercentageDistanceAlongLinearElement`
+    ndic: '`loc:DistanceFromLinearElementStart` (staničení v metrech, nemusí odpovídat skutečné vzdálenosti od počátku komunikace) nebo `loc:PercentageDistanceAlongLinearElement`
       (procenta délky úseku Global Network od jeho počátku, 0–100).'
 
 _enum: {}

@@ -351,7 +351,7 @@
         <generate>true</generate>
         <attribute>false</attribute>
         <newLowerBound>-1</newLowerBound>
-        <newUpperBound>1</newUpperBound>
+        <newUpperBound>-1</newUpperBound>
       </attributes>
       <attributes>
         <ID>EAID_F666EF2B_94A3_49dd_9A07_308811798F47</ID>

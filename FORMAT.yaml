@@ -2,7 +2,7 @@
 id: x-format:cz-ndic_d2-vms-table-v1.3
 version: '1.3'
 name:
-  cs: DATEX II VMS Table Publication – Tabulka proměnných dopravních značek
+  cs: DATEX II VMS Table Publication – Tabulka proměnného dopravního značení
   en: DATEX II VMS Table Publication – Variable message sign table
 description:
   cs: 'Statický popis proměnných dopravních značek: umístění, typ, konfigurace.'

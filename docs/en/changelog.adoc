@@ -18,7 +18,7 @@
    `260601`).
 ** The network was previously labelled `GlobalNetwork` and the chainage given as `loc:LinearElementByCode`
    with the model `mileage`; now `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork` and the chainage by
-   road number (`roadNumber`), for local roads by name (`roadName`) – the same as the situation formats.
+   road number (`roadNumber`), for local roads by name (`roadName`).
 ** The VMS type codes `variableMesageSign` and `mobileVariableMesageSign` are now spelled correctly
    `variableMessageSign` and `mobileVariableMessageSign`; other codes do not change.
 * Origin of the solution: the link to the image of the whole controller (`vmsController/externalIdentifier`)

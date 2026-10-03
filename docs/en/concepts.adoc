@@ -17,7 +17,7 @@ include::{kitdir}/shared/en/vms/pojmy.adoc[]
 [[obalka]]
 === Envelope and publication header
 
-Each message is a DATEX II 3 document with the root element `d2:payload`. The `xsi:type` attribute of the root element
+Each message is a DATEX II 3 document with the root element `d2:payload`. The `@xsi:type` attribute of the root element
 specifies the publication type (here `vms:VmsTablePublication`), the `modelBaseVersion="3"` attribute
 the model version and the `@lang` attribute the default language of texts.
 
@@ -29,7 +29,7 @@ The format the message conforms to is identified solely by attributes of the roo
 
 The publication header contains:
 
-* `feedType` – identifier of the data source the message comes from:
+* `feedType` – identifier of the data source (distribution) in the register of the national access point <<nap>>:
 ** the format of the message is identified by the `@profileName` and `@profileVersion` attributes, not by
    `feedType`,
 ** the `feedDescription` element is not used.
@@ -72,7 +72,7 @@ The static publication has the following structure:
   `vmsControllerTable`); each table is published separately:
 ** `CzechVmsTable-fixedVms` – dynamic permanent signs (along the road, on a gantry or cantilever),
 ** `CzechVmsTable-mobileVms` – dynamic portable signs (mobile trailers),
-** `CzechVmsTable-metalSigns` – fixed static ("metal") signs; the table is reserved and not yet published.
+** `CzechVmsTable-metalSigns` – fixed static ("metal") signs; the table is reserved and is not published.
 * A controller has exactly as many VMS (elements `vms`) as there are separate physical elements on the
   gantry:
 ** information gantries and trailers with one ZPI and/or one or more PDZ are modelled as one VMS,
