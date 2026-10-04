@@ -90,7 +90,7 @@ include::{samplesdir}/static-1-ZPI.xml[tag=controller,indent=0]
 
 === Typy popisovaných značek
 
-Druh VMS podle technologie zobrazení určuje element `vmsType`:
+Typ VMS podle technologie zobrazení určuje element `vmsType`:
 
 * `simpleMatrixSign` – ZPI a PIT s předdefinovanými symboly,
 * `fullMatrixSign` – plně programovatelná matice, např. vozíky,
