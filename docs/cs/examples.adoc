@@ -1,6 +1,6 @@
 == Příklady konfigurace značek
 
-Tato příloha popisuje příklady proměnného dopravního značení (VMS) ve statické publikaci. Ke každému
+Tato příloha popisuje příklady proměnných dopravních značek (VMS) ve statické publikaci. Ke každému
 příkladu je obrázek s vyznačením popisovaných částí a jejich indexů, popis základního konceptu a vzorek.
 Odpovídající dynamické publikace (vzorky `dynamic-…`) popisuje dokumentace formátu `x-format:cz-ndic_d2-vms-status-v1.2`.
 
@@ -15,7 +15,7 @@ image::ex-02.png[Poloportál se ZPI,width=600]
 
 * Řadič VMS (`vms:VmsController`): 1×, tabulka `CzechVmsTable-fixedVms`
 * VMS (`vms:Vms`; `roadsideCantileverMounted`, `vmsType` = `simpleMatrixSign`, `vmsTypeCode` =
-  `variableInformationPanel`): 1× dynamická značka na poloportálu pro celý jízdní pás [vms:1]
+  `variableInformationPanel`): 1× proměnná dopravní značka na poloportálu pro celý jízdní pás [vms:1]
 * Činné plochy (`vms:DisplayArea`): [vms:1] 1× typu piktogram (s implicitní dodatkovou tabulkou) a 1× typu text se 3 řádky
 * Poloha: souřadnice, staničení místní komunikace (`roadName`) a úsek sítě Global Network
 
@@ -39,9 +39,9 @@ image::ex-04.png[Portál liniového řízení,width=600]
 
 * Řadič VMS (`vms:VmsController`): 1×
 * VMS (`vms:Vms`; `gantryMounted`):
-** 2× proměnná značka vlevo a vpravo na sloupku pro celý jízdní pás [vms:1,5]
-** 2× dynamická značka na portálu pro řízení v jízdních pruzích [vms:2,4]
-** 1× dynamická značka na portálu pro celý jízdní pás [vms:3]
+** 2× proměnná dopravní značka vlevo a vpravo na sloupku pro celý jízdní pás [vms:1,5]
+** 2× proměnná dopravní značka na portálu pro řízení v jízdních pruzích [vms:2,4]
+** 1× proměnná dopravní značka na portálu pro celý jízdní pás [vms:3]
 * Činné plochy (`vms:DisplayArea`): [vms:1,5] 1× typu piktogram; [vms:2,3,4] 1× typu piktogram (s implicitní dodatkovou
   tabulkou)
 
@@ -58,12 +58,12 @@ include::{samplesdir}/static-2-LM.xml[tags=**]
 
 Ukázkový řadič (v tabulce NDIC zatím takový řadič není).
 
-Proměnná značka podél pozemní komunikace zobrazující teplotu vzduchu a vozovky.
+Proměnná dopravní značka podél pozemní komunikace zobrazující teplotu vzduchu a vozovky.
 
 image::ex-05.png[ZPI teploměr,width=600]
 
 * Řadič VMS (`vms:VmsController`): 1×
-* VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `temperature`): 1× dynamická značka vpravo [vms:1]
+* VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `temperature`): 1× proměnná dopravní značka vpravo [vms:1]
 * Činné plochy (`vms:DisplayArea`): [vms:1] 1× typu text se 2 řádky (teplota okolí, teplota vozovky)
 
 .static-3-meteo.xml
@@ -79,13 +79,13 @@ include::{samplesdir}/static-3-meteo.xml[tags=**]
 
 Ukázkový řadič (v tabulce NDIC zatím takový řadič není).
 
-Proměnná značka podél pozemní komunikace zobrazující počet volných míst na parkovišti.
+Proměnná dopravní značka podél pozemní komunikace zobrazující počet volných míst na parkovišti.
 
 image:ex-06.png[Značka s obsazeností parkoviště,width=400]
 image:ex-07.png[Detail značky,width=140]
 
 * Řadič VMS (`vms:VmsController`): 1×
-* VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `parking`): 1× dynamická značka [vms:1]
+* VMS (`vms:Vms`; `roadsideMounted`, `vmsTypeCode` = `parking`): 1× proměnná dopravní značka [vms:1]
 * Činné plochy (`vms:DisplayArea`): [vms:1] 1× typu text s 1–2 řádky (bližší a vzdálenější parkoviště)
 
 .static-4-parking.xml
@@ -115,7 +115,7 @@ image:ex-08.png[Mobilní vozík,width=180]
 image:ex-09.png[Konfigurace vozíku (ilustrační),width=360]
 
 * Řadič VMS (`vms:VmsController`): 1×, tabulka `CzechVmsTable-mobileVms`
-* VMS (`vms:Vms`; `trailerMounted`, `vmsType` = `fullMatrixSign`, `dynamicallyConfigurable` = `true`): 1× dynamická
+* VMS (`vms:Vms`; `trailerMounted`, `vmsType` = `fullMatrixSign`, `dynamicallyConfigurable` = `true`): 1× proměnná dopravní
   značka na vozíku [vms:1]
 * Činné plochy (`vms:DisplayArea`): [vms:1] 1× typu text s 1 řádkem nahoře, 1× typu piktogram a 1× typu text se 4 řádky dole
 
@@ -132,7 +132,7 @@ include::{samplesdir}/static-5-trailer.xml[tags=**]
 
 Skutečný řadič z tabulky NDIC (30. 9. 2026): dvojice hranolových proměnných značek po obou stranách dálnice
 D3 ve směru České Budějovice. Lamelová (hranolová) značka zobrazí otočením lamel jeden ze tří pevných
-symbolů, např. nejvyšší dovolenou rychlost 150{nbsp}km/h (`B20a_150`) nebo konec omezení
+symbolů, např. nejvyšší dovolenou rychlost 150{nbsp}km/h (`B20a_150`) nebo konec nejvyšší dovolené rychlosti
 (`B20b_150`).
 
 image::ex-10.png[Dvojice proměnných značek po obou stranách komunikace (ilustrační),width=600]

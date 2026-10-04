@@ -1,6 +1,6 @@
 == Koncepty
 
-Formát popisuje proměnné dopravní značení (VMS) podél komunikací za účelem poskytování informací
+Formát popisuje proměnné dopravní značky (VMS) podél komunikací za účelem poskytování informací
 a řízení provozu. Profil má statickou a dynamickou část:
 
 * statická část (tento formát) popisuje základní charakteristiky dopravní značky či portálu včetně
@@ -67,12 +67,12 @@ Statická publikace má následující strukturu:
   řadič VMS (`vms:VmsController`, element `vmsController`).
 * Řadiče jsou ve statické publikaci roztříděny do tabulek řadičů (element `vmsControllerTable`); každá
   tabulka se publikuje samostatně:
-** `CzechVmsTable-fixedVms` – dynamické stálé značky (podél komunikace, na (polo)portálu),
-** `CzechVmsTable-mobileVms` – dynamické přenosné značky (mobilní vozíky),
+** `CzechVmsTable-fixedVms` – proměnné stálé značky (podél komunikace, na (polo)portálu),
+** `CzechVmsTable-mobileVms` – proměnné přenosné značky (mobilní vozíky),
 ** `CzechVmsTable-metalSigns` – pevné statické („plechové“) značky; tabulka je vyhrazena a nepublikuje
    se.
 * Řadič má právě tolik VMS (elementů `vms`), kolik je na portálu oddělených fyzických prvků:
-** informační portály a vozíky s jedním ZPI a/nebo jednou či více PDZ se modelují jako jedna VMS,
+** informační portály a vozíky s jedním ZPI, jednou či více PDZ nebo s obojím se modelují jako jedna VMS,
 ** portály liniového řízení se modelují jako více VMS.
 * Každá VMS má tolik činných ploch (elementů `displayArea`), kolik je na fyzickém prvku logicky oddělených
   činných ploch. Každá plocha popisuje buď piktogram (`vms:PictogramDisplayArea`), nebo textovou

@@ -156,8 +156,8 @@ include::{samplesdir}/static-1-ZPI.xml[tag=image,indent=0]
 ** `vehicleMounted` – na vozidle.
 * *Výška* značky nad vozovkou v metrech – element `heightAboveCarriageway`, jen u značek nad vozovkou
   (portál, poloportál).
-* *Silnice* – doplňkový popis polohy `supplementaryPositionalDescription/roadInformation`:
-** číslo silnice `roadNumber`, u místních komunikací název `roadName`,
+* *Komunikace* – doplňkový popis polohy `supplementaryPositionalDescription/roadInformation`:
+** číslo komunikace `roadNumber`, u místních komunikací název `roadName`,
 ** směr `roadDestination`,
 ** v ostatních popisech polohy se tyto údaje uvádějí jen tehdy, jsou-li nezbytné.
 * *Umístění* VMS vůči jízdnímu pásu – `supplementaryPositionalDescription/positionOnCarriageway`:
@@ -165,7 +165,7 @@ include::{samplesdir}/static-1-ZPI.xml[tag=image,indent=0]
 ** `inTheCentre` – na příčníku portálu nad vozovkou (platí i pro poloportály),
 ** `onTheRight` – na sloupu či portálu vpravo po směru jízdy.
 * *Platnost* VMS vůči jízdnímu pruhu – `supplementaryPositionalDescription/carriageway`:
-** `carriageway` = `mainCarriageway` (hlavní komunikace),
+** `carriageway` = `mainCarriageway` (hlavní jízdní pás),
 ** dále buď `lane/laneUsage` = `allLanesCompleteCarriageway` – platí pro celý jízdní pás,
 ** nebo `lane/laneNumber` – číslo pruhu:
 *** 0 = zpevněná krajnice,
@@ -181,9 +181,9 @@ image::vmt-image7.png[Umístění a platnost VMS,width=600,align="center"]
 === Geografický popis polohy VMS
 
 * Poloha je vždy bodová (`loc:PointLocation`).
-* Souřadnice (ETRS89) jsou vztaženy ke středu jízdního pásu na kolmici k silnici procházející konstrukcí
+* Souřadnice (ETRS89) jsou vztaženy ke středu jízdního pásu na kolmici ke komunikaci procházející konstrukcí
   VMS.
-* Směr, název a číslo silnice jsou vždy v doplňkovém popisu polohy
+* Směr, název a číslo komunikace jsou vždy v doplňkovém popisu polohy
   `supplementaryPositionalDescription/roadInformation` (viz <<umisteni-portal>>).
 * Pro popis polohy se používají:
 ** `pointByCoordinates` – souřadnice,

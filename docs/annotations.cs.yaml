@@ -27,7 +27,7 @@ VmsControllerTable:
   informationManager:
     ndic: 'Tvůrce obsahu publikace: `country` = `cz`, `nationalIdentifier` = NDIC.'
   vmsController:
-    ndic: Jeden řadič – portál s liniovým řízením či ZPI, mobilní vozík či proměnná značka podél pozemní
+    ndic: Jeden řadič – portál s liniovým řízením či ZPI, mobilní vozík či proměnná dopravní značka podél pozemní
       komunikace. Identifikátor `@id` je jedinečný, `@version` odpovídá vydání sítě Global Network (např. `260601`).
 VmsController:
   numberOfVms:
@@ -112,7 +112,7 @@ PointLocation:
       a nepovinně Global Network (`CZ-RSD-GlobalNetwork`, vzdálenost od počátku úseku v procentech 0–100).'
 NetworkLocation:
   supplementaryPositionalDescription:
-    ndic: Doplňkový popis polohy VMS na úrovni jízdního pruhu včetně názvu a směru silnice.
+    ndic: Doplňkový popis polohy VMS na úrovni jízdního pruhu včetně názvu a směru komunikace.
 SupplementaryPositionalDescription:
   positionOnCarriageway:
     card: 1..1
