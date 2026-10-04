@@ -5,7 +5,7 @@ traffic management. The profile has a static and a dynamic part:
 
 * the static part (this format) describes the basic characteristics of a traffic sign or gantry, including
   the display area configuration, the location and the validity for lanes,
-* the dynamic part (format `cz-ndic_d2-vms-status`) describes the information currently displayed on the
+* the dynamic part (format `x-format:cz-ndic_d2-vms-status-v1.2`) describes the information currently displayed on the
   individual signs, for mobile trailers including changes of the display area configuration and of the
   trailer location.
 

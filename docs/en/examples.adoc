@@ -3,7 +3,7 @@
 This appendix describes examples of variable message signs (VMS) in the static publication. Each example
 has an image marking the described parts and their indexes, a description of the basic concept and a
 sample. The corresponding dynamic publications (samples `dynamic-…`) are described in the documentation of
-the `cz-ndic_d2-vms-status` format.
+the `x-format:cz-ndic_d2-vms-status-v1.2` format.
 
 The samples are part of the specification package `{schema-uri}.zip` (folder `samples`).
 

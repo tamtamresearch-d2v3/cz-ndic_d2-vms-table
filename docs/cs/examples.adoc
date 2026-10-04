@@ -2,7 +2,7 @@
 
 Tato příloha popisuje příklady proměnného dopravního značení (VMS) ve statické publikaci. Ke každému
 příkladu je obrázek s vyznačením popisovaných částí a jejich indexů, popis základního konceptu a vzorek.
-Odpovídající dynamické publikace (vzorky `dynamic-…`) popisuje dokumentace formátu `cz-ndic_d2-vms-status`.
+Odpovídající dynamické publikace (vzorky `dynamic-…`) popisuje dokumentace formátu `x-format:cz-ndic_d2-vms-status-v1.2`.
 
 Vzorky jsou součástí balíčku specifikace `{schema-uri}.zip` (adresář `samples`).
 

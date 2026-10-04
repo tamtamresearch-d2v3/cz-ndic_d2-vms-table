@@ -34,7 +34,7 @@ include::{samplesdir}/static-1-ZPI.xml[tag=config,indent=0]
 * Versions:
 ** the version of the table and of the controllers corresponds to the Global Network release from which the
    location description is derived, in the form `YYMM01` (e.g. `260601` for network 26.06) – the same as
-   location versions in the `cz-ndic_d2-pls` format,
+   location versions in the `x-format:cz-ndic_d2-pls-v2.0` format,
 ** with a new network release the table and all controllers get a new version, even if they have not
    changed.
 
@@ -194,7 +194,7 @@ image::vmt-image7.png[Position and validity of VMS,width=600,align="center"]
 ** `pointByCoordinates` – coordinates,
 ** `pointAlongLinearElement` by road chainage – `linearElement` with the road number (`roadNumber`, for
    unnumbered local roads the name `roadName`) and `distanceAlong` from the start of the chainage in metres
-   (the same as the situation formats and `cz-ndic_d2-pls`),
+   (the same as the situation formats and `x-format:cz-ndic_d2-pls-v2.0`),
 ** `pointAlongLinearElement` by the Global Network – `linearElement` of type `loc:LinearElementByCode` with
    `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`, the network version and the section identifier,
    distance from the start of the section in percent 0–100.

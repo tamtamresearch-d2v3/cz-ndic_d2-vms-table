@@ -5,7 +5,7 @@ a řízení provozu. Profil má statickou a dynamickou část:
 
 * statická část (tento formát) popisuje základní charakteristiky dopravní značky či portálu včetně
   konfigurace činné plochy, polohy a platnosti vůči jízdnímu pruhu,
-* dynamická část (formát `cz-ndic_d2-vms-status`) popisuje právě zobrazované informace na jednotlivých
+* dynamická část (formát `x-format:cz-ndic_d2-vms-status-v1.2`) popisuje právě zobrazované informace na jednotlivých
   značkách, u mobilních vozíků včetně změny konfigurace činné plochy a polohy vozíku.
 
 Formát vychází z DATEX II publikace `vms:VmsTablePublication` <<EN16157-4>>. Používá model DATEX II 3.7.

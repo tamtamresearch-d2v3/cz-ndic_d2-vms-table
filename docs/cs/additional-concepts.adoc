@@ -33,7 +33,7 @@ include::{samplesdir}/static-1-ZPI.xml[tag=config,indent=0]
 ** jednotlivé činné plochy (`vms:DisplayArea`) indexem v rámci VMS.
 * Verze:
 ** verze tabulky i řadičů odpovídá vydání sítě Global Network, ze kterého je popis polohy odvozen, ve tvaru
-   `RRMM01` (např. `260601` pro síť 26.06) – stejně jako verze poloh ve formátu `cz-ndic_d2-pls`,
+   `RRMM01` (např. `260601` pro síť 26.06) – stejně jako verze poloh ve formátu `x-format:cz-ndic_d2-pls-v2.0`,
 ** s novým vydáním sítě dostanou novou verzi tabulka i všechny řadiče, i když se nezměnily.
 
 [#fig-vmt-id]
@@ -189,7 +189,7 @@ image::vmt-image7.png[Umístění a platnost VMS,width=600,align="center"]
 ** `pointByCoordinates` – souřadnice,
 ** `pointAlongLinearElement` podle staničení – `linearElement` s číslem komunikace (`roadNumber`, u místních
    komunikací bez čísla název `roadName`) a `distanceAlong` od počátku staničení v metrech (stejně jako
-   situační formáty a `cz-ndic_d2-pls`),
+   situační formáty a `x-format:cz-ndic_d2-pls-v2.0`),
 ** `pointAlongLinearElement` podle sítě Global Network – `linearElement` typu `loc:LinearElementByCode`
    s `linearElementReferenceModel` = `CZ-RSD-GlobalNetwork`, verzí sítě a identifikátorem úseku,
    vzdálenost od počátku úseku v procentech 0–100.
